@@ -1,0 +1,41 @@
+.Toolbar {
+  background-color: #f4f0fa;
+  height: 10vh;
+  min-height: 50px;
+  position: fixed;
+  width: 100%;
+  max-width: 728px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 99;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.title i {
+  padding-right: 15px;
+}
+
+.Toolbar button {
+  background-color: transparent;
+  border: 1px solid #616161;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 10px;
+  margin: 10px;
+  font-size: 1.3rem;
+}
+
+.Toolbar button:hover {
+  box-shadow: 1px 2px gray;
+  color: #616161;
+}

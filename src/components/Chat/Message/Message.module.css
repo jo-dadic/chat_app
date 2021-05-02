@@ -1,0 +1,21 @@
+.Message {
+  font-size: 1.2rem;
+}
+
+.Msg {
+  max-width: 200px;
+  margin-bottom: 5px;
+  color: #1616d3;
+  font-weight: 600;
+  display: inline-block;
+  line-height: 0;
+  background-color: #f4f0fa;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+}
+
+.Message h4 {
+  color: #0b0b8a;
+  line-height: 0;
+}
