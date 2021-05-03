@@ -1,9 +1,26 @@
-.Message {
+.MessageSent {
   font-size: 1.2rem;
+  color: #0b0b8a;
+  line-height: 0;
+  text-align: end;
+  flex-direction: column-reverse;
+  margin-right: 10px;
+}
+
+.MessageReceived {
+  font-size: 1.2rem;
+  color: #0b0b8a;
+  line-height: 0;
+  align-self: flex-start;
+  text-align: start;
+  margin-left: 10px;
+}
+
+.MessageReceived .Msg {
+  color: red;
 }
 
 .Msg {
-  max-width: 200px;
   margin-bottom: 5px;
   color: #1616d3;
   font-weight: 600;
@@ -13,9 +30,4 @@
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 5px;
-}
-
-.Message h4 {
-  color: #0b0b8a;
-  line-height: 0;
 }

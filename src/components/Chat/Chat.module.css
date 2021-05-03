@@ -9,8 +9,9 @@
 .Chat .Messages {
   height: 100%;
   display: flex;
-  flex-direction: column-reverse;
-  align-items: flex-end;
+  flex-direction: column;
+  width: 100%;
+  overflow: scroll;
 }
 
 .Chat form {

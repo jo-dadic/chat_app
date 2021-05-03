@@ -18,7 +18,7 @@ const AdminLogIn = ({ history }) => {
         .signInWithEmailAndPassword(email.value, password.value)
         .then((userCredential) => {
           const user = userCredential.user;
-          if (user.uid === "cm8O7wcc6UZcd5FiMQgJ0k56hS92") {
+          if (user.uid === "CmP8KBxGkEgbWMpOnLTwAuUuKfP2") {
             user
               .updateProfile({
                 displayName: "Admin",

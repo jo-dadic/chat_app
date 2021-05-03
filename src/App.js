@@ -2,12 +2,12 @@ import React from "react";
 import { Route } from "react-router-dom";
 import { AuthProvider } from "./Auth";
 
-import Home from "./components/Home/Home";
+import Toolbar from "./components/UI/Toolbar/Toolbar";
 import SignUp from "./components/SignUp/SignUp";
 import Login from "./components/Login/Login";
 import AdminLogIn from "./components/Login/AdminLogIn/AdminLogIn";
+import Home from "./components/Home/Home";
 import Chat from "./components/Chat/Chat";
-import Toolbar from "./components/UI/Toolbar/Toolbar";
 import PrivateRoute from "./hoc/PrivateRoute";
 
 import classes from "./App.module.css";

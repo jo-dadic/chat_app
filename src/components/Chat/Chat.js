@@ -15,14 +15,16 @@ const Messages = () => {
   const sendMessageHandler = async (e) => {
     e.preventDefault();
 
-    const { uid } = currentUser;
+    const { uid, displayName } = currentUser;
 
     await messagesFirebase.add({
       text: value,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       uid,
+      nickname: displayName,
     });
 
+    window.scrollTo(0, 0);
     setValue("");
   };
 
@@ -45,7 +47,7 @@ const Messages = () => {
             setValue(e.target.value);
           }}
           name="new-message"
-          placeholder="say something"
+          placeholder="Say something"
         />
         <button type="submit">Send</button>
       </form>
