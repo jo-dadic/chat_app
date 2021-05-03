@@ -77,6 +77,11 @@ const SignIn = ({ history }) => {
               Already have an account? <Link to="/login">Log in</Link>
             </p>
           </div>
+          <div>
+            <p>
+              <Link to="/admin">Log in as Admin.</Link>
+            </p>
+          </div>
         </form>
       </div>
     </>

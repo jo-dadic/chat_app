@@ -9,7 +9,9 @@ const Message = (props) => {
 
   return (
     <div className={classes.Message}>
-      <h4>{currentUser.displayName} says:</h4>
+      <h4>
+        {currentUser.displayName ? currentUser.displayName : "Anonymus"} says:
+      </h4>
       <div className={classes.Msg}>
         <p>{text}</p>
       </div>

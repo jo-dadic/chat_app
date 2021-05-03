@@ -18,7 +18,7 @@ const Toolbar = () => {
     <div className={classes.Toolbar}>
       <div className={classes.title}>
         <i className="fab fa-rocketchat" style={{ fontSize: 36 }}></i>
-        <h1>Hive Tech Chat App</h1>
+        <h1> Chat App</h1>
       </div>
       {currentUser && <button onClick={signOutHandler}>Sign Out</button>}
       {!currentUser && null}

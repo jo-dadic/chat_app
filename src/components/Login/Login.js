@@ -52,6 +52,11 @@ const Login = ({ history }) => {
             <Link to="/signup">Sign Up</Link>
           </p>
         </div>
+        <div>
+          <p>
+            <Link to="/admin">Log in as Admin.</Link>
+          </p>
+        </div>
       </div>
     </>
   );
