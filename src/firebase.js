@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/auth";
-import "firebase/firestore";
+import "firebase/firestore"; // database
+import "firebase/storage"; // for images
 
 const app = firebase.initializeApp({
   apiKey: process.env.REACT_APP_API_KEY,
@@ -12,7 +13,8 @@ const app = firebase.initializeApp({
   appId: process.env.REACT_APP_APP_ID,
 });
 
-// export const auth = firebase.auth;
+export const fireStorage = firebase.storage();
 export const firestore = firebase.firestore();
+export const timestamp = firebase.firestore.FieldValue.serverTimestamp();
 
 export default app;

@@ -6,13 +6,14 @@ import classes from "./Home.module.css";
 
 const Home = () => {
   const { currentUser } = useContext(AuthContext);
-  console.log(currentUser);
 
   return (
     <div className={classes.Home}>
       <h1>Welcome to my chat app, {currentUser.displayName}</h1>
-      <h3>Choose a room:</h3>
-      <Link to="/chat">Chat</Link>
+      <h2>Choose a room:</h2>
+      <Link to="/chat">
+        <button>Chat</button>
+      </Link>
     </div>
   );
 };

@@ -28,6 +28,10 @@ const SignIn = ({ history }) => {
           user.updateProfile({
             displayName: name,
           });
+        })
+        .catch((error) => {
+          alert(error);
+          history.push("/signup");
         });
     },
     [history, name]
@@ -55,22 +59,27 @@ const SignIn = ({ history }) => {
                 type="text"
                 placeholder="Name"
                 onChange={nameHandler}
+                autoComplete="off"
               />
             </label>
           </div>
           <div className={classes.control}>
             <label>
               Email
-              <input name="email" type="email" placeholder="Email" />
+              <input name="email" type="email" placeholder="Email" required />
             </label>
           </div>
           <div className={classes.control}>
             <label>
               Password
-              <input name="password" type="password" placeholder="Password" />
+              <input
+                name="password"
+                type="password"
+                placeholder="Password"
+                required
+              />
             </label>
           </div>
-
           <button type="submit">Sign Up</button>
           <div>
             <p>
@@ -89,3 +98,7 @@ const SignIn = ({ history }) => {
 };
 
 export default withRouter(SignIn);
+
+// {newError && (
+//   <p style={{ color: "red" }}>Something is wrong: {newError}</p>
+// )}

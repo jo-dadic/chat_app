@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
 import app from "../../../firebase";
@@ -7,6 +7,8 @@ import app from "../../../firebase";
 import classes from "../Login.module.css";
 
 const AdminLogIn = ({ history }) => {
+  const [error, setError] = useState("");
+
   const adminLogInHandler = useCallback(
     async (e) => {
       e.preventDefault();
@@ -25,7 +27,7 @@ const AdminLogIn = ({ history }) => {
               })
               .then(history.push("/"));
           } else {
-            alert("You are not an admin!");
+            setError("You are not an admin!");
           }
         });
     },
@@ -36,6 +38,7 @@ const AdminLogIn = ({ history }) => {
     <>
       <div className={classes.Login}>
         <h2>Hello Admin, log in to proceed.</h2>
+        <p style={{ color: "red" }}>{error}</p>
         <form onSubmit={adminLogInHandler}>
           <div className={classes.control}></div>
           <div className={classes.control}>

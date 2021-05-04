@@ -1,6 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import { AuthProvider } from "./Auth";
+import ReactNotification from "react-notifications-component";
 
 import Toolbar from "./components/UI/Toolbar/Toolbar";
 import SignUp from "./components/SignUp/SignUp";
@@ -16,6 +17,7 @@ const App = () => {
   return (
     <div className={classes.App}>
       <AuthProvider>
+        <ReactNotification />
         <Toolbar />
         <div>
           <PrivateRoute exact path="/" component={Home} />

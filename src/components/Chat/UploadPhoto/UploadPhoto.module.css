@@ -1,0 +1,26 @@
+.UploadPhoto span {
+  font-size: 1.5rem;
+}
+.UploadPhoto label {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.UploadPhoto label:hover {
+  border: 1px solid #333;
+}
+
+.UploadPhoto label i {
+  padding-right: 5px;
+}
+
+.UploadPhoto input {
+  font-size: 1rem;
+}
+
+input[type="file"] {
+  display: none;
+}
