@@ -23,13 +23,15 @@
 .Msg {
   margin-bottom: 5px;
   color: #1616d3;
-  font-weight: 600;
   display: inline-block;
-  line-height: 0;
+  /* line-height: 0; */
   background-color: #f4f0fa;
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 5px;
+}
+
+@media (max-width: 327px) {
 }
 
 /* .DeleteButton {

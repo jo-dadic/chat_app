@@ -18,15 +18,6 @@ const Message = (props) => {
       </div>
     </div>
   );
-
-  // return (
-  //   <div className={`${msgClass}`}>
-  //     <h4>{uid === currentUser.uid ? nickname : "Anonymus"} says:</h4>
-  //     <div className={classes.Msg}>
-  //       <p>{text}</p>
-  //     </div>
-  //   </div>
-  // );
 };
 
 export default Message;

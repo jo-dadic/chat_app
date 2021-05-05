@@ -4,7 +4,7 @@ import ProgressBar from "../../UI/ProgressBar/ProgressBar";
 
 import classes from "./UploadPhoto.module.css";
 
-const UploadPhoto = () => {
+const UploadPhoto = (props) => {
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
 

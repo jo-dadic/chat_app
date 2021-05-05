@@ -1,7 +1,6 @@
 import React, { useState, useContext, useRef, useEffect } from "react";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import { AuthContext } from "../../Auth";
-// import firebase from "firebase/app";
 import { firestore, timestamp } from "../../firebase";
 
 import Message from "./Message/Message";
