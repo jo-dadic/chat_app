@@ -6,6 +6,8 @@ import classes from "./Home.module.css";
 
 const Home = () => {
   const { currentUser } = useContext(AuthContext);
+  // const name = currentUser.displayName;
+  // console.log(name);
 
   return (
     <div className={classes.Home}>

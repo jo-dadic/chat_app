@@ -1,22 +1,28 @@
-import React, { useCallback, useContext } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import { withRouter, Redirect } from "react-router";
 import { Link } from "react-router-dom";
 import app from "../../firebase";
 import { AuthContext } from "../../Auth";
 
+import Spinner from "../UI/Spinner/Spinner";
+
 import classes from "./Login.module.css";
 
 const Login = ({ history }) => {
+  const [spinner, setSpinner] = useState(false);
+
   const loginHandler = useCallback(
     async (e) => {
       e.preventDefault();
+      setSpinner(true);
 
       const { email, password } = e.target.elements;
 
       try {
         await app
           .auth()
-          .signInWithEmailAndPassword(email.value, password.value);
+          .signInWithEmailAndPassword(email.value, password.value)
+          .then(setSpinner(false));
         history.push("/");
       } catch (error) {
         alert(error);
@@ -58,6 +64,7 @@ const Login = ({ history }) => {
           </p>
         </div>
       </div>
+      {spinner && <Spinner />}
     </>
   );
 };

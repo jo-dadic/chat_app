@@ -3,33 +3,38 @@ import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
 import app from "../../firebase";
 
+import Spinner from "../UI/Spinner/Spinner";
+
 import classes from "./SignUp.module.css";
 
 const SignIn = ({ history }) => {
   const [name, setName] = useState("");
+  const [spinner, setSpinner] = useState(false);
 
   const nameHandler = (e) => {
     setName(e.target.value);
-    console.log(name);
   };
 
   const signUpHandler = useCallback(
     async (e) => {
       e.preventDefault();
+      setSpinner(true);
 
       const { email, password } = e.target.elements;
 
       await app
         .auth()
         .createUserWithEmailAndPassword(email.value, password.value)
-        .then(history.push("/"))
         .then((userCredential) => {
           const user = userCredential.user;
           user.updateProfile({
             displayName: name,
           });
         })
+        .then(setSpinner(false))
+        .then(history.push("/"))
         .catch((error) => {
+          app.auth().signOut();
           alert(error);
           history.push("/signup");
         });
@@ -37,27 +42,18 @@ const SignIn = ({ history }) => {
     [history, name]
   );
 
-  // try {
-  //   await app
-  //     .auth()
-  //     .createUserWithEmailAndPassword(email.value, password.value);
-  //   history.push("/");
-  // } catch (error) {
-  //   alert(error);
-  // }
-
   return (
     <>
       <div className={classes.Signup}>
         <h2>Please Sign Up to proceed.</h2>
-        <form onSubmit={signUpHandler}>
+        <form onSubmit={signUpHandler} autoComplete="off">
           <div className={classes.control}>
             <label>
               Name
               <input
                 name="name"
                 type="text"
-                placeholder="Name"
+                placeholder="Chose a name"
                 onChange={nameHandler}
                 autoComplete="off"
               />
@@ -66,7 +62,12 @@ const SignIn = ({ history }) => {
           <div className={classes.control}>
             <label>
               Email
-              <input name="email" type="email" placeholder="Email" required />
+              <input
+                name="email"
+                type="email"
+                placeholder="Enter your email"
+                required
+              />
             </label>
           </div>
           <div className={classes.control}>
@@ -75,7 +76,7 @@ const SignIn = ({ history }) => {
               <input
                 name="password"
                 type="password"
-                placeholder="Password"
+                placeholder="Enter password"
                 required
               />
             </label>
@@ -93,12 +94,9 @@ const SignIn = ({ history }) => {
           </div>
         </form>
       </div>
+      {spinner && <Spinner />}
     </>
   );
 };
 
 export default withRouter(SignIn);
-
-// {newError && (
-//   <p style={{ color: "red" }}>Something is wrong: {newError}</p>
-// )}

@@ -2,16 +2,19 @@ import React, { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
 import app from "../../../firebase";
-// import firebaseAdmin from "../../../firebase-admin";
+
+import Spinner from "../../UI/Spinner/Spinner";
 
 import classes from "../Login.module.css";
 
 const AdminLogIn = ({ history }) => {
   const [error, setError] = useState("");
+  const [spinner, setSpinner] = useState(false);
 
   const adminLogInHandler = useCallback(
     async (e) => {
       e.preventDefault();
+      setSpinner(true);
 
       const { email, password } = e.target.elements;
 
@@ -25,6 +28,7 @@ const AdminLogIn = ({ history }) => {
               .updateProfile({
                 displayName: "Admin",
               })
+              .then(setSpinner(false))
               .then(history.push("/"));
           } else {
             setError("You are not an admin!");
@@ -62,6 +66,7 @@ const AdminLogIn = ({ history }) => {
           </div>
         </form>
       </div>
+      {spinner && <Spinner />}
     </>
   );
 };
