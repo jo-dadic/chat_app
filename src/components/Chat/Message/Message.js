@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { AuthContext } from "../../../Auth";
+import { AuthContext } from "../../../Auth-context";
 
 import classes from "./Message.module.css";
 

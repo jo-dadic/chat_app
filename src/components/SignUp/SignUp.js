@@ -1,45 +1,33 @@
 import React, { useCallback, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
-import app from "../../firebase";
 
 import Spinner from "../UI/Spinner/Spinner";
+import { signInActions, signUp } from "../../store/signUp";
 
 import classes from "./SignUp.module.css";
 
 const SignIn = ({ history }) => {
-  const [name, setName] = useState("");
   const [spinner, setSpinner] = useState(false);
+  const dispatch = useDispatch();
+  const name = useSelector((state) => state.signup.name);
 
   const nameHandler = (e) => {
-    setName(e.target.value);
+    dispatch(signInActions.saveName(e.target.value));
   };
 
   const signUpHandler = useCallback(
-    async (e) => {
+    (e) => {
       e.preventDefault();
       setSpinner(true);
 
       const { email, password } = e.target.elements;
 
-      await app
-        .auth()
-        .createUserWithEmailAndPassword(email.value, password.value)
-        .then((userCredential) => {
-          const user = userCredential.user;
-          user.updateProfile({
-            displayName: name,
-          });
-        })
-        .then(setSpinner(false))
-        .then(history.push("/"))
-        .catch((error) => {
-          app.auth().signOut();
-          alert(error);
-          history.push("/signup");
-        });
+      dispatch(signUp(email, password, history, name));
+      setSpinner(false);
     },
-    [history, name]
+    [history, name, dispatch]
   );
 
   return (

@@ -1,15 +1,17 @@
 import React, { useCallback, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
-import app from "../../../firebase";
 
+import { adminLogIn } from "../../../store/logIn";
 import Spinner from "../../UI/Spinner/Spinner";
 
 import classes from "../Login.module.css";
 
 const AdminLogIn = ({ history }) => {
-  const [error, setError] = useState("");
   const [spinner, setSpinner] = useState(false);
+  const dispatch = useDispatch();
+  const error = useSelector((state) => state.login.error);
 
   const adminLogInHandler = useCallback(
     async (e) => {
@@ -18,43 +20,33 @@ const AdminLogIn = ({ history }) => {
 
       const { email, password } = e.target.elements;
 
-      await app
-        .auth()
-        .signInWithEmailAndPassword(email.value, password.value)
-        .then((userCredential) => {
-          const user = userCredential.user;
-          if (user.uid === "CmP8KBxGkEgbWMpOnLTwAuUuKfP2") {
-            user
-              .updateProfile({
-                displayName: "Admin",
-              })
-              .then(setSpinner(false))
-              .then(history.push("/"));
-          } else {
-            setError("You are not an admin!");
-          }
-        });
+      dispatch(adminLogIn(email, password, history));
+      setSpinner(false);
     },
-    [history]
+    [history, dispatch]
   );
 
   return (
     <>
       <div className={classes.Login}>
         <h2>Hello Admin, log in to proceed.</h2>
-        <p style={{ color: "red" }}>{error}</p>
+        {error && <p style={{ color: "red" }}>{error}</p>}
         <form onSubmit={adminLogInHandler}>
           <div className={classes.control}></div>
           <div className={classes.control}>
             <label>
               Email
-              <input name="email" type="email" placeholder="Email" />
+              <input name="email" type="email" placeholder="Enter email" />
             </label>
           </div>
           <div className={classes.control}>
             <label>
               Password
-              <input name="password" type="password" placeholder="Password" />
+              <input
+                name="password"
+                type="password"
+                placeholder="Enter password"
+              />
             </label>
           </div>
 

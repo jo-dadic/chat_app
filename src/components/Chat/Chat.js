@@ -1,9 +1,8 @@
 import React, { useState, useContext, useRef, useEffect } from "react";
 import { useCollectionData } from "react-firebase-hooks/firestore";
-import { AuthContext } from "../../Auth";
+import { AuthContext } from "../../Auth-context";
 import { firestore, timestamp } from "../../firebase";
 import { NotificationManager } from "react-notifications";
-import app from "../../firebase";
 
 import Message from "./Message/Message";
 import UploadPhoto from "./UploadPhoto/UploadPhoto";
@@ -11,7 +10,7 @@ import UploadPhoto from "./UploadPhoto/UploadPhoto";
 import classes from "./Chat.module.css";
 import "react-notifications/lib/notifications.css";
 
-const Messages = () => {
+const Chat = () => {
   const { currentUser } = useContext(AuthContext);
   const [value, setValue] = useState("");
   const msgEndRef = useRef(null);
@@ -45,12 +44,12 @@ const Messages = () => {
   useEffect(scrollToBottom, [messages]);
 
   useEffect(() => {
-    app.auth().onAuthStateChanged((user) => {
-      if (user) {
-        NotificationManager.info(user.displayName + " has just joined in!");
-      }
-    });
-  }, []);
+    if (currentUser) {
+      NotificationManager.info(
+        currentUser.displayName + " has just joined in!"
+      );
+    }
+  }, [currentUser]);
 
   return (
     <div className={classes.Chat}>
@@ -83,4 +82,4 @@ const Messages = () => {
   );
 };
 
-export default Messages;
+export default Chat;

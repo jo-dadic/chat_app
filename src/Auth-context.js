@@ -3,7 +3,7 @@ import app from "./firebase";
 
 export const AuthContext = React.createContext();
 
-export const AuthProvider = ({ children }) => {
+export const AuthProvider = (props) => {
   const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider value={{ currentUser }}>
-      {children}
+      {props.children}
     </AuthContext.Provider>
   );
 };

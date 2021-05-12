@@ -1,13 +1,11 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../Auth";
+import { AuthContext } from "../../Auth-context";
 
 import classes from "./Home.module.css";
 
 const Home = () => {
   const { currentUser } = useContext(AuthContext);
-  // const name = currentUser.displayName;
-  // console.log(name);
 
   return (
     <div className={classes.Home}>
@@ -15,6 +13,8 @@ const Home = () => {
       <h2>Choose a room:</h2>
       <Link to="/chat">
         <button>Chat</button>
+        <button>Netflix</button>
+        <button>Hiking</button>
       </Link>
     </div>
   );
