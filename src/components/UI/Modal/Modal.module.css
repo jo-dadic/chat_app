@@ -1,0 +1,13 @@
+.Modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 100%;
+  max-width: 728px;
+  background: rgba(0, 0, 0, 0.8);
+  transition: all 0.3s ease-out;
+  padding: 20px;
+  box-sizing: border-box;
+  position: fixed;
+}

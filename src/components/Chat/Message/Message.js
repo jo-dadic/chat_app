@@ -1,14 +1,21 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AuthContext } from "../../../Auth-context";
+
+import Modal from "../../UI/Modal/Modal";
 
 import classes from "./Message.module.css";
 
 const Message = (props) => {
   const { currentUser } = useContext(AuthContext);
   const { text, uid, nickname, url } = props.message;
+  const [showModal, setShowModal] = useState(false);
 
   const msgClass =
     uid === currentUser.uid ? classes.MessageSent : classes.MessageReceived;
+
+  const modalHandler = () => {
+    setShowModal((prev) => !prev);
+  };
 
   let img = null;
   if (url) {
@@ -16,19 +23,23 @@ const Message = (props) => {
       <img
         src={url}
         alt="new-img"
-        style={{ width: "150px", height: "200px" }}
+        style={{ width: "200px", height: "250px" }}
+        onClick={modalHandler}
       />
     );
   }
 
   return (
-    <div className={`${msgClass}`}>
-      <h4>{nickname} says:</h4>
-      <div className={classes.Msg}>
-        <p>{text}</p>
-        {img}
+    <>
+      <div className={`${msgClass}`}>
+        <h4>{nickname} says:</h4>
+        <div className={classes.Msg}>
+          <p>{text}</p>
+          {img}
+        </div>
       </div>
-    </div>
+      <Modal showModal={showModal}>{img}</Modal>
+    </>
   );
 };
 

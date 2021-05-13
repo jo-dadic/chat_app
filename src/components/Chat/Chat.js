@@ -75,6 +75,7 @@ const Chat = () => {
         </form>
       </div>
       <div>
+        <hr />
         <UploadPhoto />
       </div>
     </div>

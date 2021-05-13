@@ -12,7 +12,7 @@
   flex-direction: column;
   width: 100%;
   overflow-y: scroll;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 .Chat .MsgForm {
@@ -62,5 +62,5 @@
 
 .Chat .Submit:hover {
   box-shadow: 1px 2px gray;
-  color: #616161;
+  background-color: #e8ddf8;
 }

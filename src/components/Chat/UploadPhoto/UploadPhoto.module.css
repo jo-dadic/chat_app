@@ -11,6 +11,7 @@
 
 .UploadPhoto label:hover {
   border: 1px solid #333;
+  background-color: #e8ddf8;
 }
 
 .UploadPhoto label i {
