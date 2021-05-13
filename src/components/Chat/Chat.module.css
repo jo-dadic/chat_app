@@ -12,6 +12,7 @@
   flex-direction: column;
   width: 100%;
   overflow-y: scroll;
+  margin-bottom: 15px;
 }
 
 .Chat .MsgForm {
