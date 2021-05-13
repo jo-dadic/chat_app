@@ -34,7 +34,6 @@ const Chat = () => {
   const query = messagesFirebase.orderBy("createdAt").limitToLast(25);
 
   const [messages] = useCollectionData(query, { idField: "id" });
-  console.log(messages);
 
   // to scroll to the last message:
   const scrollToBottom = () => {

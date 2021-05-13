@@ -41,11 +41,16 @@ const Login = ({ history }) => {
         <form onSubmit={loginHandler}>
           <div className={classes.control}>
             <label htmlFor="email">E-mail:</label>
-            <input id="email" type="email" placeholder="Enter Email" />
+            <input id="email" type="email" placeholder="Enter Email" required />
           </div>
           <div className={classes.control}>
             <label htmlFor="password">Password:</label>
-            <input id="password" type="password" placeholder="Enter Password" />
+            <input
+              id="password"
+              type="password"
+              placeholder="Enter Password"
+              required
+            />
           </div>
           <button type="submit">Log In</button>
         </form>
