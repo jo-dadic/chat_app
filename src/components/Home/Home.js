@@ -13,8 +13,15 @@ const Home = () => {
       <h2>Choose a room:</h2>
       <Link to="/chat">
         <button>Chat</button>
-        <button>Netflix</button>
-        <button>Hiking</button>
+        <button disabled style={{ cursor: "not-allowed" }}>
+          Netflix
+        </button>
+        <button disabled style={{ cursor: "not-allowed" }}>
+          Hiking
+        </button>
+        <p style={{ color: "red" }}>
+          Unfortunately, rooms are unavailable at the moment.
+        </p>
       </Link>
     </div>
   );
