@@ -17,7 +17,7 @@ const Toolbar = () => {
   return (
     <div className={classes.Toolbar}>
       <div className={classes.title}>
-        <Link to="/chat">
+        <Link to="/home">
           <i className="fab fa-rocketchat" style={{ fontSize: 36 }}></i>
           <h1> Chat App</h1>
         </Link>
