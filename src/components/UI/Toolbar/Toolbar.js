@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import app from "../../../firebase";
 import { AuthContext } from "../../../Auth-context";
 
@@ -17,10 +17,10 @@ const Toolbar = () => {
   return (
     <div className={classes.Toolbar}>
       <div className={classes.title}>
-        <a href="/chat">
+        <Link to="/chat">
           <i className="fab fa-rocketchat" style={{ fontSize: 36 }}></i>
           <h1> Chat App</h1>
-        </a>
+        </Link>
       </div>
       {currentUser && <button onClick={signOutHandler}>Sign Out</button>}
       {!currentUser && null}
