@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/jo-dadic/chat_app/static/css/main.ba497fe9.chunk.css",
-    "main.js": "/jo-dadic/chat_app/static/js/main.e3c79a53.chunk.js",
-    "main.js.map": "/jo-dadic/chat_app/static/js/main.e3c79a53.chunk.js.map",
-    "runtime-main.js": "/jo-dadic/chat_app/static/js/runtime-main.0efc0d1b.js",
-    "runtime-main.js.map": "/jo-dadic/chat_app/static/js/runtime-main.0efc0d1b.js.map",
-    "static/css/2.ef8323b7.chunk.css": "/jo-dadic/chat_app/static/css/2.ef8323b7.chunk.css",
-    "static/js/2.a272c62f.chunk.js": "/jo-dadic/chat_app/static/js/2.a272c62f.chunk.js",
-    "static/js/2.a272c62f.chunk.js.map": "/jo-dadic/chat_app/static/js/2.a272c62f.chunk.js.map",
-    "index.html": "/jo-dadic/chat_app/index.html",
-    "static/css/2.ef8323b7.chunk.css.map": "/jo-dadic/chat_app/static/css/2.ef8323b7.chunk.css.map",
-    "static/css/main.ba497fe9.chunk.css.map": "/jo-dadic/chat_app/static/css/main.ba497fe9.chunk.css.map",
-    "static/js/2.a272c62f.chunk.js.LICENSE.txt": "/jo-dadic/chat_app/static/js/2.a272c62f.chunk.js.LICENSE.txt",
-    "static/media/notifications.css": "/jo-dadic/chat_app/static/media/notification.c5d9251e.ttf"
+    "main.css": "/chat_app/static/css/main.ba497fe9.chunk.css",
+    "main.js": "/chat_app/static/js/main.e3c79a53.chunk.js",
+    "main.js.map": "/chat_app/static/js/main.e3c79a53.chunk.js.map",
+    "runtime-main.js": "/chat_app/static/js/runtime-main.d4854787.js",
+    "runtime-main.js.map": "/chat_app/static/js/runtime-main.d4854787.js.map",
+    "static/css/2.853903e1.chunk.css": "/chat_app/static/css/2.853903e1.chunk.css",
+    "static/js/2.d080d4a8.chunk.js": "/chat_app/static/js/2.d080d4a8.chunk.js",
+    "static/js/2.d080d4a8.chunk.js.map": "/chat_app/static/js/2.d080d4a8.chunk.js.map",
+    "index.html": "/chat_app/index.html",
+    "static/css/2.853903e1.chunk.css.map": "/chat_app/static/css/2.853903e1.chunk.css.map",
+    "static/css/main.ba497fe9.chunk.css.map": "/chat_app/static/css/main.ba497fe9.chunk.css.map",
+    "static/js/2.d080d4a8.chunk.js.LICENSE.txt": "/chat_app/static/js/2.d080d4a8.chunk.js.LICENSE.txt",
+    "static/media/notifications.css": "/chat_app/static/media/notification.c5d9251e.ttf"
   },
   "entrypoints": [
-    "static/js/runtime-main.0efc0d1b.js",
-    "static/css/2.ef8323b7.chunk.css",
-    "static/js/2.a272c62f.chunk.js",
+    "static/js/runtime-main.d4854787.js",
+    "static/css/2.853903e1.chunk.css",
+    "static/js/2.d080d4a8.chunk.js",
     "static/css/main.ba497fe9.chunk.css",
     "static/js/main.e3c79a53.chunk.js"
   ]
