@@ -21,27 +21,11 @@
 }
 
 .Msg {
-  margin-bottom: 5px;
   color: #1616d3;
   display: inline-block;
-  /* line-height: 0; */
+  line-height: 1.2;
   background-color: #f4f0fa;
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 5px;
 }
-
-@media (max-width: 327px) {
-}
-
-/* .DeleteButton {
-  font-size: 1rem;
-  color: gray;
-  border: none;
-  background-color: transparent;
-}
-
-.DeleteButton:hover {
-  color: black;
-  font-weight: 600;
-} */

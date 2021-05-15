@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { withRouter, Redirect } from "react-router";
 import { Link } from "react-router-dom";
@@ -14,18 +14,15 @@ const Login = ({ history }) => {
   const dispatch = useDispatch();
   const error = useSelector((state) => state.login.error);
 
-  const loginHandler = useCallback(
-    (e) => {
-      e.preventDefault();
-      setSpinner(true);
+  const loginHandler = (e) => {
+    e.preventDefault();
+    setSpinner(true);
 
-      const { email, password } = e.target.elements;
+    const { email, password } = e.target.elements;
 
-      dispatch(logIn(email, password, history));
-      setSpinner(false);
-    },
-    [history, dispatch]
-  );
+    dispatch(logIn(email, password, history));
+    setSpinner(false);
+  };
 
   const { currentUser } = useContext(AuthContext);
 
@@ -37,7 +34,9 @@ const Login = ({ history }) => {
     <>
       <div className={classes.Login}>
         <h2>Please Log In to proceed.</h2>
-        {error && <p style={{ color: "red" }}>Opss... {error}</p>}
+        {error && (
+          <p style={{ color: "red" }}>Opss... {error} Please, sign up.</p>
+        )}
         <form onSubmit={loginHandler}>
           <div className={classes.control}>
             <label htmlFor="email">E-mail:</label>

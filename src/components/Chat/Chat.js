@@ -42,6 +42,7 @@ const Chat = () => {
 
   useEffect(scrollToBottom, [messages]);
 
+  // notifications:
   useEffect(() => {
     if (currentUser) {
       NotificationManager.info(

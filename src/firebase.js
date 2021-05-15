@@ -13,6 +13,8 @@ const app = firebase.initializeApp({
   appId: process.env.REACT_APP_APP_ID,
 });
 
+export const adminId = "xB3QSxC7WthkNWFesEf285heBzi1";
+
 export const fireStorage = firebase.storage();
 export const firestore = firebase.firestore();
 export const timestamp = firebase.firestore.FieldValue.serverTimestamp();

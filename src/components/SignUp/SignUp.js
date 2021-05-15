@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
@@ -17,18 +17,15 @@ const SignIn = ({ history }) => {
     dispatch(signInActions.saveName(e.target.value));
   };
 
-  const signUpHandler = useCallback(
-    (e) => {
-      e.preventDefault();
-      setSpinner(true);
+  const signUpHandler = (e) => {
+    e.preventDefault();
+    setSpinner(true);
 
-      const { email, password } = e.target.elements;
+    const { email, password } = e.target.elements;
 
-      dispatch(signUp(email, password, history, name));
-      setSpinner(false);
-    },
-    [history, name, dispatch]
-  );
+    dispatch(signUp(email, password, history, name));
+    setSpinner(false);
+  };
 
   return (
     <>

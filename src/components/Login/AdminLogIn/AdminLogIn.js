@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
@@ -12,19 +12,18 @@ const AdminLogIn = ({ history }) => {
   const [spinner, setSpinner] = useState(false);
   const dispatch = useDispatch();
   const error = useSelector((state) => state.login.error);
+  const admin = useSelector((state) => state.login.isAdmin);
 
-  const adminLogInHandler = useCallback(
-    async (e) => {
-      e.preventDefault();
-      setSpinner(true);
+  const adminLogInHandler = (e) => {
+    e.preventDefault();
+    setSpinner(true);
 
-      const { email, password } = e.target.elements;
+    const { email, password } = e.target.elements;
 
-      dispatch(adminLogIn(email, password, history));
-      setSpinner(false);
-    },
-    [history, dispatch]
-  );
+    dispatch(adminLogIn(email, password, history));
+    setSpinner(false);
+    console.log(admin);
+  };
 
   return (
     <>
