@@ -23,7 +23,7 @@ const Message = (props) => {
       <img
         src={url}
         alt="new-img"
-        style={{ width: "200px", height: "250px" }}
+        style={{ maxWidth: "500px", maxHeight: "70vh" }}
         onClick={modalHandler}
       />
     );
