@@ -41,6 +41,7 @@ const SignIn = ({ history }) => {
                 placeholder="Chose a name"
                 onChange={nameHandler}
                 autoComplete="off"
+                required
               />
             </label>
           </div>
