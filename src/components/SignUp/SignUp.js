@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
 
-import Spinner from "../UI/Spinner/Spinner";
 import { signInActions, signUp } from "../../store/signUp";
+import Spinner from "../UI/Spinner/Spinner";
 
 import classes from "./SignUp.module.css";
 
